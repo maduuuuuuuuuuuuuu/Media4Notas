@@ -1,59 +1,31 @@
-﻿Console.WriteLine("Veja sua média de 4 notas!");
+﻿double notaum, notadois, notatres, notaquatro, media;
 
-Console.WriteLine("Digite sua primeira nota:");
-
-double notaum;
-
+Console.WriteLine("Média 4 Notas");
+Console.WriteLine("Digite sua primeira nota");
 notaum = Convert.ToDouble(Console.ReadLine()!);
 
-Console.WriteLine("Digite sua segunda nota:");
-
-double notadois;
-
+Console.WriteLine("Digite sua segunda nota");
 notadois = Convert.ToDouble(Console.ReadLine()!);
 
-Console.WriteLine("Digite sua terceira nota:");
+Console.WriteLine("Digite sua terceira nota");
+notatres = Convert.ToDouble(Console.ReadLine()!);
 
-double notatres;
-
-notatres = Convert.ToDouble(Console.ReadLine())!;
-
-Console.WriteLine("Digite sua quarta e última nota:");
-
-double notaquatro;
-
+Console.WriteLine("Digite sua quarta nota");
 notaquatro = Convert.ToDouble(Console.ReadLine()!);
 
-double media;
-
- 
-
-if (notaum < 0 || notaum > 10
-
- || notadois < 0 || notadois > 10
-
- || notatres < 0 || notatres > 10
-
- || notaquatro < 0 || notaquatro > 10){
-
-    Console.WriteLine("Digite somente numeros de 0 a 10");
+if(notaum<0 | notaum>10 | notadois<0 | notadois>10 | notatres<0 | notatres>10 | notaquatro<0 | notaquatro>10){
+    Console.WriteLine("Digite apenas numeros de 0 a 10");
+}
+else 
+{
+    media = (notaum + notadois + notatres + notaquatro) / 4;
+ if (media < 5){
+    Console.WriteLine($"Sua media é = {media:N1}    Resultado: Reprovado");
  }
- else {media = (notaum + notadois + notatres + notaquatro) / 4;
- 
-if(media < 5.00){
-
-    Console.Write("Resultado: Reprovado.");
-
-Console.Write($"Sua média é de {media}! ");
-
-if(media > 6.00){
-
-    Console.Write("Resultado: Aprovado.");
-}
-else{
-
-    Console.Write("Resultado: Recuperação.");
-
-}
-}
+ else if( media > 6){
+    Console.WriteLine($"Sua media é = {media:N1}    Resultado: Aprovado");
  }
+ else{
+    Console.WriteLine($"Sua media é = {media:N1}    Resultado: Recuperação");
+ }
+   }
